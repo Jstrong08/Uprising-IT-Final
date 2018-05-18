@@ -2,33 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
+public class Movement : MonoBehaviour
+{
+    public float moveSpeed;
+    public float jumpHeight;
 
-    public float speed;
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGround;
+    private bool grounded;
 
-    private Rigidbody2D rb2d;
+    // Use this for initialization
+    void Start()
+    {
+    }
 
-	
-	void Start () {
+    void fixedUpdate()
+    {
 
-         rb2d = GetComponent<Rigidbody2D> ();
-        
-		
-	}
-	
-	
-	void Update () {
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+    }
+    // Update is called once per frame
+    void Update()
+    {
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+        }
 
-        float moveVertical = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.D))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        }
 
-        
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-
-        
-        rb2d.AddForce(movement * speed);
-
+        if (Input.GetKey(KeyCode.A))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        }
 
     }
 }
