@@ -690,11 +690,11 @@ Prefab:
     - target: {fileID: 21200004, guid: 47d3e747b2e87de4c8358aaa436365ea, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b64ea1450422b264ab51d8af4d127794, type: 2}
+      objectReference: {fileID: 2100000, guid: 2626188de0980cb4ca83760a73f20677, type: 2}
     - target: {fileID: 21200010, guid: 47d3e747b2e87de4c8358aaa436365ea, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b64ea1450422b264ab51d8af4d127794, type: 2}
+      objectReference: {fileID: 2100000, guid: 2626188de0980cb4ca83760a73f20677, type: 2}
     - target: {fileID: 21200016, guid: 47d3e747b2e87de4c8358aaa436365ea, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
